@@ -1,11 +1,9 @@
-'use strict';
-var test = require('ava');
-var hasJsxPragma = require('./');
+import test from 'ava';
+import m from './';
 
-test(function (t) {
-	t.assert(hasJsxPragma('\n/** @jsx React.DOM */\n\nvar foo = true;'));
-	t.assert(hasJsxPragma('\n/** \n\n @jsx React.DOM \n\n */\n\nvar foo = true;'));
-	t.assert(hasJsxPragma('\n/** @jsx */\n\nvar foo = true;'));
-	t.assert(!hasJsxPragma('\n/* \n\n@jsx React.DOM \n\n*/\n\nvar foo = true;'));
-	t.end();
+test(t => {
+	t.true(m('\n/** @jsx React.DOM */\n\nvar foo = true;'));
+	t.true(m('\n/** \n\n @jsx React.DOM \n\n */\n\nvar foo = true;'));
+	t.true(m('\n/** @jsx */\n\nvar foo = true;'));
+	t.false(m('\n/* \n\n@jsx React.DOM \n\n*/\n\nvar foo = true;'));
 });
