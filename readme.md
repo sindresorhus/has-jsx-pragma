@@ -1,3 +1,9 @@
+# Deprecated
+
+Deprecated as this package is no longer useful.
+
+---
+
 # has-jsx-pragma [![Build Status](https://travis-ci.org/sindresorhus/has-jsx-pragma.svg?branch=master)](https://travis-ci.org/sindresorhus/has-jsx-pragma)
 
 > Check if a string contains a [JSX pragma](http://facebook.github.io/react/docs/jsx-in-depth.html)
